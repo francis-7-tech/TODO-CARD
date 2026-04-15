@@ -19,9 +19,18 @@
         </p>
 
         <!-- Priority and Status -->
-
+        
+        <span data-testid="test-todo-priority-indicator" class="priority-icon">🟢</span>
         <span data-testid="test-todo-priority" aria-label="Priority: High" class="priority-span">High</span>
         <span data-testid="test-todo-status" aria-label="Task Status" class="status-span">In Progress</span>
+
+        <label for="status-control">Task Status</label>
+        <select data-testid="test-todo-status-control" name="status-control" id="status-control">
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Done">Done</option>
+        </select>
+
 
         <!-- Label and Checkbox -->
         <input type="checkbox" data-testid="test-todo-complete-toggle" id="todo">
