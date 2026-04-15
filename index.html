@@ -14,9 +14,17 @@
         </header>
         
         <!-- Task Description -->
-        <p data-testid="test-todo-description">Complete my final year project by researching the topic, designing the system, 
-         developing the solution, testing functionality, and preparing documentation for submission.
-        </p>
+         <div id="collapsible-todo" data-testid="test-todo-collapsible-section">
+            <p data-testid="test-todo-description">Complete my final year project by researching the topic, designing the system, 
+               developing the solution, testing functionality, and preparing documentation for submission.
+            </p>
+         </div>
+
+         <!-- Toggle Button -->
+          <button data-testid="test-todo-expand-toggle" aria-expanded="false" aria-controls="collapsible-todo" id="toggle-btn">
+
+          </button>
+        
 
         <!-- Priority and Status -->
         
@@ -36,9 +44,11 @@
         <input type="checkbox" data-testid="test-todo-complete-toggle" id="todo">
         <label for="todo">Mark as Complete</label>
 
-        <!-- Due Date and Time Remaining -->
+        <!-- Due Date, Time Remaining and Overdue Indicator -->
         <time datetime="2026-04-16T00:00" data-testid="test-todo-due-date" class="due-date">Due: April 16th, 2026</time>
         <time data-testid="test-todo-time-remaining" aria-live="polite" class="time-remaining"></time>
+        <span data-testid="test-todo-overdue-indicator" class="overdue-indicator" aria-live="polite"></span>
+
 
         <!-- Tag List -->
         <ul data-testid="test-todo-tags" role="list">
@@ -50,6 +60,29 @@
             <button data-testid="test-todo-edit-button" class="edit-btn">Edit</button>
             <button data-testid="test-todo-delete-button" class="delete-btn">Delete</button>
         </footer>
+
+        <form data-testid="test-todo-edit-form" class="edit-form">
+            <label for="edit-title">Title</label>
+            <input type="text" data-testid="test-todo-edit-title-input" id="edit-title">
+
+            <label for="edit-description">Description</label>
+            <textarea name="edit-description" id="edit-description" data-testid="test-todo-edit-description-input">
+            </textarea>
+
+            <label for="edit-priority">Priority</label>
+            <select name="edit-priority" id="edit-priority" data-testid="test-todo-edit-priority-select">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+
+            <label for="edit-due-date">Due Date</label>
+            <input type="datetime-local" data-testid="test-todo-edit-due-date-input">
+
+            <button data-testid="test-todo-save-button">Save</button>
+            <button data-testid="test-todo-cancel-button"></button>
+
+        </form>
 
     </article>
 
