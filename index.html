@@ -21,19 +21,23 @@
          </div>
 
          <!-- Toggle Button -->
-          <button data-testid="test-todo-expand-toggle" aria-expanded="false" aria-controls="collapsible-todo" id="toggle-btn">
+        <div class="toggle-container">
+            <button data-testid="test-todo-expand-toggle" aria-expanded="false" aria-controls="collapsible-todo" class="toggle-btn">
+             Show More
+            </button>
+        </div>
+        <!-- Priority Indicator -->
+        <div class="priority-status">   
+           <span data-testid="test-todo-priority-indicator" class="priority-icon">🟢</span>
 
-          </button>
-        
+           <!-- Priority and Status -->
+           <span data-testid="test-todo-priority" aria-label="Priority: High" class="priority-span">High</span>
+           <span data-testid="test-todo-status" aria-label="Task Status" class="status-span">In Progress</span>
+        </div> 
 
-        <!-- Priority and Status -->
-        
-        <span data-testid="test-todo-priority-indicator" class="priority-icon">🟢</span>
-        <span data-testid="test-todo-priority" aria-label="Priority: High" class="priority-span">High</span>
-        <span data-testid="test-todo-status" aria-label="Task Status" class="status-span">In Progress</span>
+        <!-- Status Control -->
 
-        <label for="status-control">Task Status</label>
-        <select data-testid="test-todo-status-control" name="status-control" id="status-control">
+        <select data-testid="test-todo-status-control" name="status-control" id="status-control" aria-label="Task Status">
             <option value="Pending">Pending</option>
             <option value="In Progress">In Progress</option>
             <option value="Done">Done</option>
@@ -77,10 +81,10 @@
             </select>
 
             <label for="edit-due-date">Due Date</label>
-            <input type="datetime-local" data-testid="test-todo-edit-due-date-input">
+            <input type="datetime-local" data-testid="test-todo-edit-due-date-input" id="edit-due-date">
 
-            <button data-testid="test-todo-save-button">Save</button>
-            <button data-testid="test-todo-cancel-button">Cancel</button>
+            <button data-testid="test-todo-save-button" class="form-btn save-btn">Save</button>
+            <button data-testid="test-todo-cancel-button" class="form-btn cancel-btn">Cancel</button>
 
         </form>
 
